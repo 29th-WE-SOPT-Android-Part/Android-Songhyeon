@@ -16,4 +16,13 @@
     <string name="input_name">이름을 입력해주세요</string>
 
 
+    <!--Home-->
+    <string name="ksh">김송현</string>
+    <string name="old">나이</string>
+    <string name="age">23</string>
+    <string name="mbti">mbti</string>
+    <string name="infj">infj</string>
+    <string name="sogae">안녕하세요</string>
+
+
 </resources>
