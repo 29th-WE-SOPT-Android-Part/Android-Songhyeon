@@ -1,3 +1,12 @@
 <resources>
+    <!--signin-->
     <string name="app_name">29th_first_semina</string>
+    <string name="sopthub">SOPTHub</string>
+    <string name="login">로그인</string>
+    <string name="id">아이디</string>
+    <string name="pwd">비밀번호</string>
+    <string name="input_id">아이디를 입력해주세요</string>
+    <string name="input_pwd">비밀번호를 입력해주세요</string>
+    <string name="signin">회원가입</string>
+
 </resources>
