@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:id="@+id/iv_sophub"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/login"
+        android:text="@string/signin"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_sophub" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_id"
+        android:id="@+id/cl_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,10 +39,10 @@
 
 
         <TextView
-            android:id="@+id/tv_id"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/id"
+            android:text="@string/name"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,22 +51,61 @@
             />
 
         <EditText
-            android:id="@+id/et_id"
+            android:id="@+id/et_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rectangle_fill_white_border_pink"
-            android:hint="@string/input_id"
+            android:hint="@string/input_name"
             android:paddingVertical="15dp"
             android:paddingStart="20dp"
             android:textColorHint="@color/gray"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id"
-            app:layout_constraintBottom_toBottomOf="@+id/cl_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cl_name"
+        app:layout_constraintTop_toBottomOf="@+id/cl_name">
+
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="@string/id"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle_fill_white_border_pink"
+            android:hint="@string/input_pwd"
+            android:paddingVertical="15dp"
+            android:paddingStart="20dp"
+            android:textColorHint="@color/gray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -76,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/cl_id"
+        app:layout_constraintStart_toStartOf="@+id/cl_name"
         app:layout_constraintTop_toBottomOf="@+id/cl_id">
 
 
@@ -97,9 +136,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="10dp"
-            android:inputType="textPassword"
             android:background="@drawable/rectangle_fill_white_border_pink"
             android:hint="@string/input_pwd"
+            android:inputType="textPassword"
             android:paddingVertical="15dp"
             android:paddingStart="20dp"
             android:textColorHint="@color/gray"
@@ -117,24 +156,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
         android:background="@drawable/rectangle_fill_pink"
-        android:text="@string/login"
+        android:text="@string/complete_signup"
         android:textColor="@color/white"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signin"
+        android:layout_marginBottom="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_signin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rectangle_fill_white"
-        android:text="@string/signin"
-        android:textColor="@color/gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
