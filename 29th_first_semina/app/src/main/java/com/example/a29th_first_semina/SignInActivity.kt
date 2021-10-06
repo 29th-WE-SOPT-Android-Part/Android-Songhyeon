@@ -29,27 +29,32 @@ class SignInActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun moveSignUpActivity(){
-        val signupintent = Intent(this,SignUpActivity::class.java)
+    private fun moveSignUpActivity() {
+        val signupintent = Intent(this, SignUpActivity::class.java)
         startActivity(signupintent)
 
     }
 
-    private fun clickLoginEvent(){
-        binding.btnLogin.setOnClickListener {
-            val user_id: String = binding.etId.text.toString()
-            val user_pwd: String = binding.etPwd.text.toString()
-            if (user_id.isEmpty() || user_pwd.isEmpty()) {
-                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
-            } else {
-                moveHomeActivity()
+    private fun clickLoginEvent() {
+
+        binding.apply {
+            btnLogin.setOnClickListener {
+                val userId: String = etId.text.toString()
+                val userPwd: String = etPwd.text.toString()
+                if (userId.isEmpty() || userPwd.isEmpty()) {
+                    Toast.makeText(this@SignInActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                } else {
+                    moveHomeActivity()
+                }
+
             }
 
         }
+
     }
 
-    private fun clickSignUpEvent(){
-        binding.btnSignin.setOnClickListener{
+    private fun clickSignUpEvent() {
+        binding.btnSignin.setOnClickListener {
             moveSignUpActivity()
         }
 
