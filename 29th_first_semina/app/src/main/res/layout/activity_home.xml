@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/iv_sophub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_sopthub"
+        />
+
+    <ImageView
+        android:id="@+id/img_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/me"
+        android:layout_marginHorizontal="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_sophub" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/img_me"
+        app:layout_constraintTop_toBottomOf="@+id/img_me" />
+
+    <TextView
+        android:id="@+id/tv_ksh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ksh"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/old"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_old"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_age"
+        app:layout_constraintTop_toTopOf="@+id/tv_age" />
+
+    <TextView
+        android:id="@+id/tv_mbti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mbti"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_age"
+        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+
+    <TextView
+        android:id="@+id/tv_infj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/infj"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_mbti"
+        app:layout_constraintTop_toTopOf="@+id/tv_mbti" />
+
+    <TextView
+        android:id="@+id/sogae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sogae"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_mbti"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
