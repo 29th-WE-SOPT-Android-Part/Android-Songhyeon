@@ -12,6 +12,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Toast.makeText(this,"김송현님 환영합니다",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "김송현님 환영합니다", Toast.LENGTH_SHORT).show()
     }
 }

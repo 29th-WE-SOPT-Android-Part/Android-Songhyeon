@@ -13,7 +13,6 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         initButtonClickEvent()
 
     }
@@ -25,23 +24,23 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun moveHomeActivity() {
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
+        val homeIntent = Intent(this, HomeActivity::class.java)
+        startActivity(homeIntent)
     }
 
     private fun moveSignUpActivity() {
-        val signupintent = Intent(this, SignUpActivity::class.java)
-        startActivity(signupintent)
+        val signupIntent = Intent(this, SignUpActivity::class.java)
+        startActivity(signupIntent)
 
     }
 
     private fun clickLoginEvent() {
 
-        binding.apply {
+        with(binding) {
             btnLogin.setOnClickListener {
-                val userId: String = etId.text.toString()
-                val userPwd: String = etPwd.text.toString()
-                if (userId.isEmpty() || userPwd.isEmpty()) {
+                val userId = etId.text
+                val userPassword= etPwd.text
+                if (userId.isEmpty() || userPassword.isEmpty()) {
                     Toast.makeText(this@SignInActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                 } else {
                     moveHomeActivity()
