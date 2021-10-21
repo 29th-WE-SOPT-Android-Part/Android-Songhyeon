@@ -23,6 +23,8 @@
     <string name="mbti">mbti</string>
     <string name="infj">infj</string>
     <string name="sogae">안녕하세요</string>
+    <string name="follower">팔로워 목록</string>
+    <string name="repogitory">레포지토리 목록</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
