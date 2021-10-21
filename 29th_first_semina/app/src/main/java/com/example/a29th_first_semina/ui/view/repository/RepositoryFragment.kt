@@ -6,20 +6,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.a29th_first_semina.R
+import com.example.a29th_first_semina.databinding.FragmentRepoBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 class RepositoryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+    private var _binding : FragmentRepoBinding ?= null
+    private val binding get() = _binding ?: error("뷰 참조를 위해 바인딩이 초기화되지 않음")
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_repo, container, false)
+       _binding = FragmentRepoBinding.inflate(
+           inflater,
+           container,
+           false
+       )
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val repositoryAdapter = RepositoryAdapter()
+        binding.rcvRepogitory.adapter = repositoryAdapter
+
+        repositoryAdapter.repositoryList.addAll(
+            listOf<RepositoryData>(
+                RepositoryData("week1","first_level"),
+                RepositoryData("week2","first_level"),
+                RepositoryData("week3","first_level"),
+            )
+
+        )
+
+        repositoryAdapter.notifyDataSetChanged()
+
+
     }
 
 
