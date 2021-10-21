@@ -1,4 +1,4 @@
-package com.example.a29th_first_semina.ui.view.repo
+package com.example.a29th_first_semina.ui.view.repository
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import com.example.a29th_first_semina.R
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-class RepogitoryFragment : Fragment() {
+class RepositoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
 

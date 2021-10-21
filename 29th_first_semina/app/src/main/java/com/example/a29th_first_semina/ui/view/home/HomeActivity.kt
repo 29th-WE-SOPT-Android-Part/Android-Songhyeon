@@ -6,7 +6,7 @@ import android.widget.Toast
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.ActivityHomeBinding
 import com.example.a29th_first_semina.ui.view.follwer.FollowerFragment
-import com.example.a29th_first_semina.ui.view.repo.RepogitoryFragment
+import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
     private fun initTransactionEvent() {
 
         val followerFragment = FollowerFragment()
-        val repogitoryFragment = RepogitoryFragment()
+        val repositoryFragment = RepositoryFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.frg_list, followerFragment).commit()
 
@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.btnRepogitory.setOnClickListener {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frg_list, repogitoryFragment).commit()
+            transaction.replace(R.id.frg_list, repositoryFragment).commit()
         }
 
     }

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.a29th_first_semina.databinding.ActivitySampleBinding
 import com.example.a29th_first_semina.ui.view.follwer.FollowerFragment
-import com.example.a29th_first_semina.ui.view.repo.RepogitoryFragment
+import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
 
 class SampleActivity : AppCompatActivity() {
     private var position = FIRST_POSITION
@@ -21,7 +21,7 @@ class SampleActivity : AppCompatActivity() {
 
     fun initTransactionEvent(){
         val sampleFragment = FollowerFragment()
-        val sampleFragment2 = RepogitoryFragment()
+        val sampleFragment2 = RepositoryFragment()
 
         supportFragmentManager.beginTransaction().add(R.id.container_sample, sampleFragment).commit()
 
