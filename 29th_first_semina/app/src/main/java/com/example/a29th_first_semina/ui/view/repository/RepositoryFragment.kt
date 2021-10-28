@@ -40,7 +40,7 @@ class RepositoryFragment : Fragment() {
             listOf<RepositoryData>(
                 RepositoryData("week1","first_level"),
                 RepositoryData("week2","first_level"),
-                RepositoryData("week3","first_level"),
+                RepositoryData("week3","엄청나게길게써야한다그래야보여줄수있기때문이다"),
             )
 
         )

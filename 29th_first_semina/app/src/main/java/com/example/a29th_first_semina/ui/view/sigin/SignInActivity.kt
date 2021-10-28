@@ -53,7 +53,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun clickSignUpEvent() {
-        binding.btnSignin.setOnClickListener {
+        binding.tvSignup.setOnClickListener {
             moveSignUpActivity()
         }
 
