@@ -1,11 +1,11 @@
-package com.example.a29th_first_semina
+package com.example.a29th_first_semina.ui.view.sigin
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.example.a29th_first_semina.databinding.ActivitySigninBinding
+import com.example.a29th_first_semina.ui.view.home.HomeActivity
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySigninBinding

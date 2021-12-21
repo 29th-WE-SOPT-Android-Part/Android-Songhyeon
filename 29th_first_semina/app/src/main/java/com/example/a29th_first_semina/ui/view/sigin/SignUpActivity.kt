@@ -1,4 +1,4 @@
-package com.example.a29th_first_semina
+package com.example.a29th_first_semina.ui.view.sigin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

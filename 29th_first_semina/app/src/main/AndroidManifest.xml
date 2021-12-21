@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.29th_first_semina">
-        <activity android:name=".SampleActivity">
+        <activity android:name=".SampleActivity" />
+        <activity android:name=".ui.view.sigin.SignUpActivity" />
+        <activity
+            android:name=".ui.view.home.HomeActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity android:name=".SignInActivity">
+        <activity android:name=".ui.view.sigin.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
