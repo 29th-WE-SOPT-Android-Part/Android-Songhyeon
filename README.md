@@ -1,4 +1,114 @@
 
+# 4주차 과제 
+
+(엄청난 뒷북입니다,,,,,)
+
+## POSTMAN 테스트
+
+### 1. 회원가입
+
+![image-20211222031942799](C:\Users\PS42\AppData\Roaming\Typora\typora-user-images\image-20211222031942799.png)
+
+
+
+### 2. 로그인
+
+![image-20211222032053562](C:\Users\PS42\AppData\Roaming\Typora\typora-user-images\image-20211222032053562.png)
+
+
+
+## 회원가입 API
+
+```kotlin
+        val requsetSignupData = RequsetSignUpdata(
+            email = binding.etId.text.toString(),
+            password =  binding.etPwd.toString(),
+            name = binding.etName.toString()
+        )
+
+        val call : Call<ResponseSignUpData> = ServiceCreater.service.postSignup(requsetSignupData)
+
+        call.enqueue(object : Callback<ResponseSignUpData>{
+            override fun onResponse(
+                call: Call<ResponseSignUpData>,
+                response: Response<ResponseSignUpData>
+            ) {
+                if(response.isSuccessful){
+                    val data = response.body()?.data
+                    Log.d("서버통신 상태", response.body()?.status.toString())
+                    finish()
+                }
+
+                else{
+                    Log.d("서버통신 상태", response.body()?.status.toString())
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseSignUpData>, t: Throwable) {
+                Log.d("서버통신 상태", "실패")
+            }
+        })
+
+
+    
+```
+
+
+
+## 로그인 API
+
+```kotlin
+ val requsetLoginData = RequsetLoginData(
+            email = binding.etId.text.toString(),
+            password = binding.etPwd.text.toString()
+        )
+
+        val call : retrofit2.Call<ResponseLoginData> = ServiceCreater.service.postLogin(requsetLoginData)
+
+        call.enqueue(object : Callback<ResponseLoginData>{
+            override fun onResponse(
+                call: retrofit2.Call<ResponseLoginData>,
+                response: Response<ResponseLoginData>
+            ) {
+                if(response.isSuccessful){
+                    val data = response.body()?.data
+                    moveHomeActivity()
+                    Log.d("서버통신 상태",response.body()?.status.toString())
+                }
+                else {
+                    Toast.makeText(
+                        this@SignInActivity,
+                        response.body()?.status.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.d("서버통신 상태", response.body()?.status.toString())
+                }
+            }
+
+            override fun onFailure(call: retrofit2.Call<ResponseLoginData>, t: Throwable) {
+                Log.d("로그인통신 실패","실패임")
+            }
+        })
+```
+
+
+
+- 알아보기 쉽게 Log문으로 status 값을 띄웠습니다.
+
+- 실행결과 둘 다 200이 뜹니다.
+
+  
+
+## 실행 결과
+
+![image-20211222031542596](C:\Users\PS42\AppData\Roaming\Typora\typora-user-images\image-20211222031542596.png)
+
+
+
+## 시연 영상
+https://user-images.githubusercontent.com/81518783/146979540-880e143c-df8a-4d41-8477-cdaf8c903f63.mp4
+
+
 
 
 # 3차 뒷북입니다
