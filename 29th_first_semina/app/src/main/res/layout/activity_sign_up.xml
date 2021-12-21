@@ -151,7 +151,7 @@
         android:id="@+id/btn_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/selector_sample_text"
+        android:background="@drawable/rectangle_fill_pink"
         android:fontFamily="@font/notosanskr_bold"
         android:text="@string/signin"
         android:textColor="@color/white"
