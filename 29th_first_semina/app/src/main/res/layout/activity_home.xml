@@ -7,157 +7,28 @@
     android:background="@color/white"
     tools:context=".ui.view.home.HomeActivity">
 
-    <ImageView
-        android:id="@+id/iv_sophub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/ic_sopthub"
-        />
-
-    <ImageView
-        android:id="@+id/img_me"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="140dp"
-        android:src="@drawable/me"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frg_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bnv_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_intro"
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_menu"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="250dp"
-        android:padding="20dp"
-        android:paddingStart="150dp"
-        >
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_ksh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="@string/ksh"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/tv_name"
-            app:layout_constraintTop_toTopOf="@+id/tv_name" />
-
-        <TextView
-            android:id="@+id/tv_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/old"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/tv_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-        <TextView
-            android:id="@+id/tv_old"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="@string/age"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/tv_age"
-            app:layout_constraintTop_toTopOf="@+id/tv_age" />
-
-        <TextView
-            android:id="@+id/tv_mbti"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mbti"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/tv_age"
-            app:layout_constraintTop_toBottomOf="@+id/tv_age" />
-
-        <TextView
-            android:id="@+id/tv_infj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:text="@string/infj"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/tv_mbti"
-            app:layout_constraintTop_toTopOf="@+id/tv_mbti" />
-
-        <TextView
-            android:id="@+id/sogae"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="@string/sogae"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/tv_mbti"
-            app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/btn_follower"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_fill_pink"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        android:text="@string/follower"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_intro" />
-
-    <Button
-        android:id="@+id/btn_repogitory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_fill_orange"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        android:text="@string/repogitory"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_follower"
-        app:layout_constraintTop_toTopOf="@+id/btn_follower" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        app:menu="@menu/menu_sample"
+        app:itemIconTint="@color/selector_bottom_nave"
+        app:itemRippleColor="@color/pink"
+        app:itemTextColor="@color/selector_bottom_nave"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_repogitory" />
-
-
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

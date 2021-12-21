@@ -77,5 +77,3 @@ Fragment는 Activity와 생명주기가 다르다. 특히 Fragment는 좀비뷰�
 
 
   
-
-https://user-images.githubusercontent.com/81518783/138343242-75b3bb43-e11e-4a6b-b0a1-f744d0401ff9.mp4

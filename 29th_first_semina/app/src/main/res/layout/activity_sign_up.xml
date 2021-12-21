@@ -4,38 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.view.sigin.SignUpActivity">
 
-    <ImageView
-        android:id="@+id/iv_sophub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/ic_sopthub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signin"
+        android:fontFamily="@font/notosanskr_bold"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="56dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_sophub" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_signup"
-        android:layout_marginTop="20dp">
+        >
 
 
         <TextView
@@ -44,24 +39,24 @@
             android:layout_height="wrap_content"
             android:text="@string/name"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanskr_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="50dp"
             />
 
         <EditText
             android:id="@+id/et_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rectangle_fill_white_border_pink"
+            android:background="@drawable/selector_sample_text"
             android:hint="@string/input_name"
-            android:paddingVertical="15dp"
-            android:paddingStart="20dp"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
             android:textColorHint="@color/gray"
-            android:textSize="15sp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name"
@@ -73,9 +68,10 @@
         android:id="@+id/cl_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/cl_name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_name">
 
 
@@ -85,8 +81,8 @@
             android:layout_height="wrap_content"
             android:text="@string/id"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginStart="50dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanskr_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,14 +90,14 @@
             android:id="@+id/et_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rectangle_fill_white_border_pink"
+            android:background="@drawable/selector_sample_text"
             android:hint="@string/input_pwd"
-            android:paddingVertical="15dp"
-            android:paddingStart="20dp"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
             android:textColorHint="@color/gray"
-            android:textSize="15sp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/cl_id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,9 +109,10 @@
         android:id="@+id/cl_pwd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/cl_name"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_id">
 
 
@@ -125,8 +122,8 @@
             android:layout_height="wrap_content"
             android:text="@string/pwd"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:layout_marginStart="50dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanskr_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,15 +131,15 @@
             android:id="@+id/et_pwd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rectangle_fill_white_border_pink"
+            android:background="@drawable/selector_sample_text"
             android:hint="@string/input_pwd"
             android:textColorHint="@color/gray"
-            android:textSize="15sp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
             android:inputType="textPassword"
-            android:paddingVertical="15dp"
-            android:paddingStart="20dp"
-            android:layout_marginHorizontal="50dp"
-            android:layout_marginTop="10dp"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/cl_pwd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -154,13 +151,17 @@
         android:id="@+id/btn_signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_fill_pink"
-        android:text="@string/complete_signup"
+        android:background="@drawable/selector_sample_text"
+        android:fontFamily="@font/notosanskr_bold"
+        android:text="@string/signin"
         android:textColor="@color/white"
-        android:layout_marginBottom="120dp"
-        android:layout_marginHorizontal="50dp"
+        android:textSize="15sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="74dp"
+        android:layout_marginTop="67dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/cl_pwd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
