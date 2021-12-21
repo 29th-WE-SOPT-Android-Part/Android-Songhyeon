@@ -45,25 +45,29 @@ class ProfileFragment : Fragment() {
 
     private fun initTransactionEvent() {
 
-        val followerFragment = FollowerFragment()
-        val repositoryFragment = RepositoryFragment()
 
-        childFragmentManager.beginTransaction().add(R.id.frg_list, followerFragment).commit()
+        childFragmentManager.beginTransaction().add(R.id.frg_list, FollowerFragment()).commit()
         binding.btnFollower.isSelected = true
         binding.btnRepogitory.isSelected = false
+
+
 
         binding.btnFollower.setOnClickListener {
             binding.btnFollower.isSelected = true
             binding.btnRepogitory.isSelected = false
-            val transaction = childFragmentManager.beginTransaction()
-            transaction.replace(R.id.frg_list, followerFragment).commit()
+
+            childFragmentManager.beginTransaction()
+                .replace(R.id.frg_list, FollowerFragment())
+                .commit()
         }
 
         binding.btnRepogitory.setOnClickListener {
             binding.btnFollower.isSelected = false
             binding.btnRepogitory.isSelected = true
-            val transaction = childFragmentManager.beginTransaction()
-            transaction.replace(R.id.frg_list, repositoryFragment).commit()
+
+            childFragmentManager.beginTransaction()
+                .replace(R.id.frg_list, RepositoryFragment())
+                .commit()
         }
     }
 

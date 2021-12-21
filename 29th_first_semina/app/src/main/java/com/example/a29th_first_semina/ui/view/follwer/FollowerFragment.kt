@@ -1,10 +1,13 @@
 package com.example.a29th_first_semina.ui.view.follwer
 
+import android.icu.lang.UCharacter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.FragmentFollowerBinding
@@ -25,7 +28,7 @@ class FollowerFragment : Fragment() {
             container,
             false
         )
-
+        divider()
         return binding.root
     }
 
@@ -52,12 +55,17 @@ class FollowerFragment : Fragment() {
         followerAdapter.notifyDataSetChanged()
     }
 
-   /* private fun initImage() {
-        Glide.with(this)
-            .load(R.drawable.me)
-            .circleCrop()
-            .into(binding.... )
-    }*/
+    private fun divider(){
+        binding.rcvFollower.addItemDecoration(
+            DividerItemDecoration(
+                context,
+                LinearLayoutManager.VERTICAL
+            )
+        )
+    }
+
+
+
 
 
 
