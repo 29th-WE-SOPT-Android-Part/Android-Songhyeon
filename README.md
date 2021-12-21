@@ -1,4 +1,74 @@
-# 필수 과제
+
+
+
+# 3차 뒷북입니다
+# 3주차 과제
+
+굉장히 뒷북입니다,,,,,,,,,죄송합니다,,,,,,
+
+
+
+### ProfileFragment 내 repository btn, follower btn 클릭 시 fragment 대체
+
+```kotlin
+   childFragmentManager.beginTransaction().add(R.id.frg_list, FollowerFragment()).commit()
+        binding.btnFollower.isSelected = true
+        binding.btnRepogitory.isSelected = false
+
+
+
+        binding.btnFollower.setOnClickListener {
+            binding.btnFollower.isSelected = true
+            binding.btnRepogitory.isSelected = false
+
+            childFragmentManager.beginTransaction()
+                .replace(R.id.frg_list, FollowerFragment())
+                .commit()
+        }
+
+        binding.btnRepogitory.setOnClickListener {
+            binding.btnFollower.isSelected = false
+            binding.btnRepogitory.isSelected = true
+
+            childFragmentManager.beginTransaction()
+                .replace(R.id.frg_list, RepositoryFragment())
+                .commit()
+        }
+    }
+```
+
+- childFragmentManager를 사용했습니다
+- button 클릭 시 button 및 text 의 color가 바뀔 수 있게 isSelected 속성을 바꿨습니다
+
+
+
+
+
+### 이미지 Circle 적용
+
+```kotlin
+private fun initImage() {
+        Glide.with(this)
+            .load(R.drawable.me)
+            .circleCrop()
+            .into(binding.ivPhoto)
+    }
+```
+
+- Glide를 사용 했습니다
+
+
+
+### 시연연상
+https://user-images.githubusercontent.com/81518783/146917797-7f5af776-3d7a-4b30-88c2-932a3e5c3062.mp4
+
+
+
+
+
+
+
+# 2주차 필수 과제
 ( 도전 과제는 나중에 올릴게용!)
 
 ### 📚패키징
