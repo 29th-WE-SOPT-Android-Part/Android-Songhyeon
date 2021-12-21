@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.FragmentFollowerBinding
-import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
+
 
 
 class FollowerFragment : Fragment() {
@@ -26,8 +26,6 @@ class FollowerFragment : Fragment() {
             false
         )
 
-        initImage()
-        //initTransactionEvent()
         return binding.root
     }
 
@@ -54,32 +52,14 @@ class FollowerFragment : Fragment() {
         followerAdapter.notifyDataSetChanged()
     }
 
-    private fun initImage() {
+   /* private fun initImage() {
         Glide.with(this)
             .load(R.drawable.me)
             .circleCrop()
-            .into(binding.ivPhoto)
-    }
-
-    /*private fun initTransactionEvent() {
-
-        val followerFragment = FollowerFragment()
-        val repositoryFragment = RepositoryFragment()
-
-
-
-        requireContext().supportFragmentManager.beginTransaction().add(R.id.frg_list, followerFragment).commit()
-
-
-
-        binding.btnFollower.setOnClickListener {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frg_list, followerFragment).commit()
-        }
-
-        binding.btnRepogitory.setOnClickListener {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frg_list, repositoryFragment).commit()
-        }
+            .into(binding.... )
     }*/
+
+
+
+
 }
