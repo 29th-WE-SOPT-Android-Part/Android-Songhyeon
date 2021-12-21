@@ -7,11 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="pink">#F658A6</color>
+    <color name="pink">#FA79B0</color>
     <color name="gray">#d0d0d0</color>
     <color name="text_gray">#acb5bd</color>
     <color name="rigth_gray">#f2f2f2</color>
     <color name="gray2">#828282</color>
     <color name="gray3">#9b9b9b</color>
-    <color name="orange">#FFFF764B</color>
+    <color name="orange">#FAB24C</color>
+    <color name="gray4">#DFDFDF</color>
+
 </resources>

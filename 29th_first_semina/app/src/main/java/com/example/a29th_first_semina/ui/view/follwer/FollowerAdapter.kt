@@ -3,6 +3,8 @@ package com.example.a29th_first_semina.ui.view.follwer
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.ItemFollowerListBinding
 
 class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {
@@ -13,9 +15,12 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: FollowerData) {
             with(binding){
-                ivProfile.setImageResource(data.image)
                 tvName.text = data.name
                 tvIntro.text = data.intro
+                Glide.with(ivProfile.context)
+                    .load(data.image)
+                    .circleCrop().into(ivProfile)
+
             }
         }
     }
@@ -36,6 +41,8 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
         holder.onBind(follwerList[position])
 
     }
+
+
 
     override fun getItemCount(): Int = follwerList.size
 }

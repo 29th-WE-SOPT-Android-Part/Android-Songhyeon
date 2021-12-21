@@ -1,12 +1,14 @@
 package com.example.a29th_first_semina.ui.view.follwer
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.FragmentFollowerBinding
+import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
 
 
 class FollowerFragment : Fragment() {
@@ -23,6 +25,9 @@ class FollowerFragment : Fragment() {
             container,
             false
         )
+
+        initImage()
+        //initTransactionEvent()
         return binding.root
     }
 
@@ -33,6 +38,7 @@ class FollowerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val followerAdapter = FollowerAdapter()
         binding.rcvFollower.adapter = followerAdapter
 
@@ -48,4 +54,32 @@ class FollowerFragment : Fragment() {
         followerAdapter.notifyDataSetChanged()
     }
 
+    private fun initImage() {
+        Glide.with(this)
+            .load(R.drawable.me)
+            .circleCrop()
+            .into(binding.ivPhoto)
+    }
+
+    /*private fun initTransactionEvent() {
+
+        val followerFragment = FollowerFragment()
+        val repositoryFragment = RepositoryFragment()
+
+
+
+        requireContext().supportFragmentManager.beginTransaction().add(R.id.frg_list, followerFragment).commit()
+
+
+
+        binding.btnFollower.setOnClickListener {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.frg_list, followerFragment).commit()
+        }
+
+        binding.btnRepogitory.setOnClickListener {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.frg_list, repositoryFragment).commit()
+        }
+    }*/
 }
