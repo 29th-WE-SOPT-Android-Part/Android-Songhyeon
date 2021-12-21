@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.a29th_first_semina.databinding.ActivitySignUpBinding
-import com.example.a29th_first_semina.ui.view.sigin.ServiceCreater
+import com.example.a29th_first_semina.ui.view.sigin.di.ServiceCreater
 import com.example.a29th_first_semina.ui.view.sigin.data.RequsetSignUpdata
 import com.example.a29th_first_semina.ui.view.sigin.data.ResponseSignUpData
 import retrofit2.Call

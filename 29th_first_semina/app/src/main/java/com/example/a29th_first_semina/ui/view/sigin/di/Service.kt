@@ -1,4 +1,4 @@
-package com.example.a29th_first_semina.ui.view.sigin
+package com.example.a29th_first_semina.ui.view.sigin.di
 
 import android.telecom.Call
 import com.example.a29th_first_semina.ui.view.sigin.data.RequsetLoginData
