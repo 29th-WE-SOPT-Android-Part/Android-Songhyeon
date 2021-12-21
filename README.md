@@ -12,7 +12,7 @@
 
 
 ### 2. 로그인
-![ㅇㅇㅇ]https://user-images.githubusercontent.com/81518783/146979839-7f28d3e3-8d72-4b23-a14f-b975cf868354.png
+![ㅇㅇㅇ](https://user-images.githubusercontent.com/81518783/146979839-7f28d3e3-8d72-4b23-a14f-b975cf868354.png)
 
 
 
