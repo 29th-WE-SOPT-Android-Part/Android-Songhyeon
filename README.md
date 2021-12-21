@@ -6,13 +6,13 @@
 ## POSTMAN 테스트
 
 ### 1. 회원가입
-https://user-images.githubusercontent.com/81518783/146979803-60126646-6ec2-45ea-b556-2f39c78d90ae.png
+![ㅇㅇㅇ](https://user-images.githubusercontent.com/81518783/146979803-60126646-6ec2-45ea-b556-2f39c78d90ae.png)
 
 
 
 
 ### 2. 로그인
-https://user-images.githubusercontent.com/81518783/146979839-7f28d3e3-8d72-4b23-a14f-b975cf868354.png
+![ㅇㅇㅇ]https://user-images.githubusercontent.com/81518783/146979839-7f28d3e3-8d72-4b23-a14f-b975cf868354.png
 
 
 
@@ -102,7 +102,7 @@ https://user-images.githubusercontent.com/81518783/146979839-7f28d3e3-8d72-4b23-
 ## 실행 결과
 
 
-https://user-images.githubusercontent.com/81518783/146979726-60817fab-2a19-4f4c-9aec-5f3de344d909.png
+![ㅇㅇㅇ]https://user-images.githubusercontent.com/81518783/146979726-60817fab-2a19-4f4c-9aec-5f3de344d909.png
 
 
 
