@@ -1,4 +1,4 @@
-package com.example.a29th_first_semina.ui.view.sigin
+package com.example.a29th_first_semina.ui.view.sigin.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,6 +35,11 @@ class SignUpActivity : AppCompatActivity() {
                 }
             }
         }
+
+
+    }
+
+    private fun initNetwork() {
 
 
     }
