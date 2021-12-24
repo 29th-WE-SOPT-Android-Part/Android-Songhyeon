@@ -39,6 +39,16 @@
     <string name="following">팔로잉</string>
     <string name="followerr">팔로워</string>
     <string name="ready">준비 중입니다</string>
+
+
+    <!--Onboarding-->
+    <string name="onborad">온보딩</string>
+    <string name="btn_next">다음으로</string>
+    <string name="tv_1">SOPTHub에 오신걸\n환영합니다!</string>
+    <string name="tv_2">SOPTHub에서 즐거운 시간\n보내시길 바랍니다!</string>
+    <string name="tv_3">SOPTHub를\n시작해볼까요?</string>
+    <string name="start">시작하기</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
