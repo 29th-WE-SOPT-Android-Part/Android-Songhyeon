@@ -10,6 +10,8 @@ import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.FragmentProfileBinding
 import com.example.a29th_first_semina.ui.view.follwer.FollowerFragment
 import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
+import com.example.a29th_first_semina.ui.view.setting.SettingActivity
+import com.example.a29th_first_semina.util.IntentUtil.moveActivity
 
 
 class ProfileFragment : Fragment() {
@@ -28,6 +30,7 @@ class ProfileFragment : Fragment() {
         )
         initImage()
         initTransactionEvent()
+        clickBtnSetting()
         return binding.root
     }
 
@@ -68,6 +71,13 @@ class ProfileFragment : Fragment() {
             childFragmentManager.beginTransaction()
                 .replace(R.id.frg_list, RepositoryFragment())
                 .commit()
+        }
+    }
+
+
+    private fun clickBtnSetting() {
+        binding.btnSetting.setOnClickListener {
+            moveActivity(context,SettingActivity::class.java)
         }
     }
 

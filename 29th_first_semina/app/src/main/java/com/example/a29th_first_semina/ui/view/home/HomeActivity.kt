@@ -10,6 +10,7 @@ import com.example.a29th_first_semina.ui.view.CameraFragment
 import com.example.a29th_first_semina.ui.view.ProfileFragment
 import com.example.a29th_first_semina.ui.view.follwer.FollowerFragment
 import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
+import com.example.a29th_first_semina.util.ToastUtil.makeToast
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -19,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initButtomNavigation()
-        Toast.makeText(this, "김송현님 환영합니다", Toast.LENGTH_SHORT).show()
+        makeToast("김송현님 환영합니다")
     }
 
     private fun initButtomNavigation(){
