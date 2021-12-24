@@ -283,6 +283,7 @@ binding.btnNext.setOnClickListener {
 
 1. 온보딩을 한 번도 해본 적이 없었는데 재밌었습니다!
 2. 버튼을 액티비티에 넣어서 액티비티 내에서 전환처리를 해보잔 생각이 들었습니다
+3. requireActivity와 getAcitivity의 차이점
 
 
 
