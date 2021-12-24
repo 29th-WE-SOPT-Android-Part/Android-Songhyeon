@@ -2,6 +2,7 @@ package com.example.a29th_first_semina.ui.view.onboarding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.ActivityOnboardingBinding
 
@@ -12,5 +13,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
     }
 }
