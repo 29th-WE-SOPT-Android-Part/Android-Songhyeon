@@ -2,7 +2,8 @@
 1주차 과제는 1주차 브랜치에 있음!  
 [2주차 필수과제](#2주차-필수-과제)  
 [3주차 필수과제](#3주차-과제)  
-[4주차 필수 과제](#4주차-과제)  
+[4주차 필수 과제](#4주차-과제)
+[7주차 필수 과제](#7주차-과제)
 
 
 # 4주차 과제 
@@ -265,3 +266,26 @@ Fragment는 Activity와 생명주기가 다르다. 특히 Fragment는 좀비뷰�
 
 
   
+# 7주차 과제
+
+###  구현한 로직(코드)을 설명하는 내용  
+
+#### SignInActivity 화면으로 전환 시 HostActivity는 finish()로 종료
+
+```kotlin
+binding.btnNext.setOnClickListener {
+    startActivity(Intent(context, SignInActivity::class.java))
+    requireActivity().finish()
+}
+```
+
+### 이번 과제를 통해 배운내용 및 성장한 내용
+
+1. 온보딩을 한 번도 해본 적이 없었는데 재밌었습니다!
+2. 버튼을 액티비티에 넣어서 액티비티 내에서 전환처리를 해보잔 생각이 들었습니다
+
+
+
+### 시연연상
+https://user-images.githubusercontent.com/81518783/147325216-40873039-81ee-4c6e-ac4a-4fe9deef169f.mp4
+
