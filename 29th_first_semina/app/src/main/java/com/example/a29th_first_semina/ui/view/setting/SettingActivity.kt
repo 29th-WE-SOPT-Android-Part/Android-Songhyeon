@@ -8,6 +8,7 @@ import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.ActivitySettingBinding
 import com.example.a29th_first_semina.ui.view.sigin.SheredPreference.SophubUserAuthStorage
 import com.example.a29th_first_semina.ui.view.sigin.view.SignInActivity
+import com.example.a29th_first_semina.util.IntentUtil
 
 class SettingActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySettingBinding
@@ -22,7 +23,7 @@ class SettingActivity : AppCompatActivity() {
 
         binding.tvLogout.setOnClickListener {
             SophubUserAuthStorage.clearAuthStorage(this)
-            startActivity(Intent(this,SignInActivity::class.java))
+            IntentUtil.moveActivity(this, SignInActivity::class.java)
             Log.d("자동 로그아웃","해제")
 
         }

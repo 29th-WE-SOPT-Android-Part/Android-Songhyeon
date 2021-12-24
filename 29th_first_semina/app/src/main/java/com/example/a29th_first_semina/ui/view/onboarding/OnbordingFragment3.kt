@@ -1,6 +1,5 @@
 package com.example.a29th_first_semina.ui.view.onboarding
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.a29th_first_semina.databinding.FragmentOnbording3Binding
 import com.example.a29th_first_semina.ui.view.sigin.view.SignInActivity
+import com.example.a29th_first_semina.util.IntentUtil
 
 class OnbordingFragment3 : Fragment() {
     private var _binding : FragmentOnbording3Binding ?= null
@@ -25,7 +25,7 @@ class OnbordingFragment3 : Fragment() {
         )
 
         binding.btnNext.setOnClickListener {
-            startActivity(Intent(context, SignInActivity::class.java))
+            IntentUtil.moveActivity(context, SignInActivity::class.java)
             requireActivity().finish()
         }
         return binding.root

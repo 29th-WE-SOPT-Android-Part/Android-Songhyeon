@@ -1,6 +1,5 @@
 package com.example.a29th_first_semina.ui.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +11,7 @@ import com.example.a29th_first_semina.databinding.FragmentProfileBinding
 import com.example.a29th_first_semina.ui.view.follwer.FollowerFragment
 import com.example.a29th_first_semina.ui.view.repository.RepositoryFragment
 import com.example.a29th_first_semina.ui.view.setting.SettingActivity
+import com.example.a29th_first_semina.util.IntentUtil.moveActivity
 
 
 class ProfileFragment : Fragment() {
@@ -77,7 +77,7 @@ class ProfileFragment : Fragment() {
 
     private fun clickBtnSetting() {
         binding.btnSetting.setOnClickListener {
-            startActivity(Intent(context,SettingActivity::class.java))
+            moveActivity(context,SettingActivity::class.java)
         }
     }
 

@@ -8,6 +8,7 @@ import com.example.a29th_first_semina.databinding.ActivitySignUpBinding
 import com.example.a29th_first_semina.ui.view.sigin.di.ServiceCreater
 import com.example.a29th_first_semina.ui.view.sigin.data.RequsetSignUpdata
 import com.example.a29th_first_semina.ui.view.sigin.data.ResponseSignUpData
+import com.example.a29th_first_semina.util.ToastUtil.makeToast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,8 +35,7 @@ class SignUpActivity : AppCompatActivity() {
 
             btnSignup.setOnClickListener {
                 if (userName.isEmpty() || userId.isEmpty() || userPwd.isEmpty() ){
-                    Toast.makeText(this@SignUpActivity, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT)
-                        .show()
+                    makeToast("입력되지 않은 정보가 있습니다")
                 }
                 else {
                     initNetwork()

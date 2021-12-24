@@ -11,6 +11,8 @@ import com.example.a29th_first_semina.ui.view.sigin.SheredPreference.SophubUserA
 import com.example.a29th_first_semina.ui.view.sigin.di.ServiceCreater
 import com.example.a29th_first_semina.ui.view.sigin.data.RequsetLoginData
 import com.example.a29th_first_semina.ui.view.sigin.data.ResponseLoginData
+import com.example.a29th_first_semina.util.IntentUtil
+import com.example.a29th_first_semina.util.ToastUtil.makeToast
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -34,14 +36,12 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun moveHomeActivity() {
-        val homeIntent = Intent(this, HomeActivity::class.java)
-        startActivity(homeIntent)
+        IntentUtil.moveActivity(this, HomeActivity::class.java)
+
     }
 
     private fun moveSignUpActivity() {
-        val signupIntent = Intent(this, SignUpActivity::class.java)
-        startActivity(signupIntent)
-
+        IntentUtil.moveActivity(this, SignUpActivity::class.java)
     }
 
     private fun clickLoginEvent() {
@@ -51,7 +51,7 @@ class SignInActivity : AppCompatActivity() {
                 val userId = etId.text
                 val userPassword= etPwd.text
                 if (userId.isEmpty() || userPassword.isEmpty()) {
-                    Toast.makeText(this@SignInActivity, "아이디/비번 둘 다 입력해라", Toast.LENGTH_SHORT).show()
+                    makeToast("아이디/비번 둘 다 입력해라")
                 } else {
                     initNetwork()
                 }
