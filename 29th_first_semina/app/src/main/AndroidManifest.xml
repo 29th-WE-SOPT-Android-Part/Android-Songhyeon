@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.29th_first_semina"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.view.setting.SettingActivity"></activity>
         <activity android:name=".ui.view.onboarding.OnboardingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

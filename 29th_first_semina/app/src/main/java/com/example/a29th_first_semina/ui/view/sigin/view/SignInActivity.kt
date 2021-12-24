@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.a29th_first_semina.databinding.ActivitySigninBinding
 import com.example.a29th_first_semina.ui.view.home.HomeActivity
+import com.example.a29th_first_semina.ui.view.sigin.SheredPreference.SophubUserAuthStorage
 import com.example.a29th_first_semina.ui.view.sigin.di.ServiceCreater
 import com.example.a29th_first_semina.ui.view.sigin.data.RequsetLoginData
 import com.example.a29th_first_semina.ui.view.sigin.data.ResponseLoginData
@@ -19,6 +20,9 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        searchSopthubUserStoage()
         initButtonClickEvent()
 
     }
@@ -79,9 +83,16 @@ class SignInActivity : AppCompatActivity() {
                 response: Response<ResponseLoginData>
             ) {
                 if(response.isSuccessful){
-                    val data = response.body()?.data
                     moveHomeActivity()
                     Log.d("서버통신 상태",response.body()?.status.toString())
+
+                    if(!hasUserAutoData()){
+                        Log.d("저장소에 있는","아이디 비번 없음")
+                        binding.apply {
+                            SophubUserAuthStorage.saveUserId(this@SignInActivity,etId.text.toString())
+                            SophubUserAuthStorage.saveUserPwd(this@SignInActivity,etPwd.text.toString())
+                        }
+                    }
                 }
                 else {
                     Toast.makeText(
@@ -98,4 +109,22 @@ class SignInActivity : AppCompatActivity() {
             }
         })
     }
+
+    private fun searchSopthubUserStoage(){
+        if(hasUserAutoData()){
+            val requsetLoginData = RequsetLoginData(
+                email = binding.etId.text.toString(),
+                password = binding.etPwd.text.toString()
+            )
+
+            ServiceCreater.service.postLogin(requsetLoginData)
+            Log.d("자동 로그인","성공")
+            moveHomeActivity()
+
+        }
+
+    }
+
+    private fun hasUserAutoData() = SophubUserAuthStorage.getUserId(this).isNotEmpty() &&
+            SophubUserAuthStorage.getUserPwd(this).isNotEmpty()
 }
