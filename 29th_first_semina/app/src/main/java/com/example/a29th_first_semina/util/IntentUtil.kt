@@ -6,6 +6,7 @@ object IntentUtil {
     fun moveActivity(context: Context?, activity: Class<*>){
         val intent = Intent(context,activity)
         context?.startActivity(intent)
+
     }
 
 }
