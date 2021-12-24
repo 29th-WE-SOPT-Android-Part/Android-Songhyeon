@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.a29th_first_semina.R
 import com.example.a29th_first_semina.databinding.FragmentOnboarding1Binding
 
@@ -23,6 +24,10 @@ class OnboardingFragment1 : Fragment() {
             container,
             false
         )
+
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.action_onboardingFragment1_to_onboardingFragment2)
+        }
         return binding.root
     }
 
