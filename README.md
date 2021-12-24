@@ -366,11 +366,12 @@ private fun clickSignUpEvent() {
 
 ## 패키징 방식
 
-![image-20211224174814851](C:\Users\PS42\AppData\Roaming\Typora\typora-user-images\image-20211224174814851.png)
+
+![image-20211224174814851](https://user-images.githubusercontent.com/81518783/147338394-33e07e25-866e-4504-9034-4be719e3b7fa.png)
 
 - Util과 ui로 나눔
 - ui
-- ![image-20211224174939152](C:\Users\PS42\AppData\Roaming\Typora\typora-user-images\image-20211224174939152.png)
+- ![image-20211224174939152](https://user-images.githubusercontent.com/81518783/147338435-b0d326b0-1c93-41d0-9c3b-c0c361328851.png)
 - 각 뷰별로 패키징함
 - 안에 data, di, SheredPreference, view로 나눔
   - data : 서버에 필요한 RequestData , ReponseData
