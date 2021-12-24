@@ -37,12 +37,8 @@ class SignInActivity : AppCompatActivity() {
 
     private fun moveHomeActivity() {
         IntentUtil.moveActivity(this, HomeActivity::class.java)
-
     }
 
-    private fun moveSignUpActivity() {
-        IntentUtil.moveActivity(this, SignUpActivity::class.java)
-    }
 
     private fun clickLoginEvent() {
 
@@ -55,16 +51,13 @@ class SignInActivity : AppCompatActivity() {
                 } else {
                     initNetwork()
                 }
-
             }
-
         }
-
     }
 
     private fun clickSignUpEvent() {
         binding.tvSignup.setOnClickListener {
-            moveSignUpActivity()
+            IntentUtil.moveActivity(this, SignUpActivity::class.java)
         }
 
     }
@@ -119,7 +112,7 @@ class SignInActivity : AppCompatActivity() {
 
             ServiceCreater.service.postLogin(requsetLoginData)
             Log.d("자동 로그인","성공")
-            moveHomeActivity()
+            IntentUtil.moveActivity(this, HomeActivity::class.java)
 
         }
 
