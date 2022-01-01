@@ -14,14 +14,10 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
     class FollowerViewHolder(private val binding: ItemFollowerListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: FollowerData) {
-            with(binding){
-                tvName.text = data.name
-                tvIntro.text = data.intro
-                Glide.with(ivProfile.context)
-                    .load(data.image)
-                    .circleCrop().into(ivProfile)
-
-            }
+            binding.follower = data
+            Glide.with(binding.ivProfile.context)
+                .load(data.image)
+                .circleCrop().into(binding.ivProfile)
         }
     }
 
@@ -41,7 +37,6 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
         holder.onBind(follwerList[position])
 
     }
-
 
 
     override fun getItemCount(): Int = follwerList.size

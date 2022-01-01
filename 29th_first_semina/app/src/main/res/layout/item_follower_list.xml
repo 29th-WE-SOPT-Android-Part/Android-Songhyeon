@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="follower"
+            type="com.example.a29th_first_semina.ui.view.follwer.FollowerData" />
 
     </data>
 
@@ -23,7 +26,8 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/dabeem" />
+        tools:background="@drawable/dabeem"
+        />
 
     <TextView
         android:id="@+id/tv_name"
@@ -35,6 +39,7 @@
         android:layout_marginStart="22dp"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toTopOf="@+id/iv_profile"
+        android:text="@{follower.name}"
         tools:text="@string/ksh" />
 
     <TextView
@@ -49,6 +54,7 @@
         app:layout_constraintStart_toStartOf="@+id/tv_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@{follower.intro}"
         tools:text="@string/name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
