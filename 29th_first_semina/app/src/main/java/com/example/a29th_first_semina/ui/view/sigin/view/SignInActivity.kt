@@ -3,6 +3,8 @@ package com.example.a29th_first_semina.ui.view.sigin.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.example.a29th_first_semina.databinding.ActivitySigninBinding
@@ -26,6 +28,8 @@ class SignInActivity : AppCompatActivity() {
 
         searchSopthubUserStoage()
         initButtonClickEvent()
+        checkUserData()
+        enableLoginButton()
 
     }
 
@@ -45,7 +49,7 @@ class SignInActivity : AppCompatActivity() {
         with(binding) {
             btnLogin.setOnClickListener {
                 val userId = etId.text
-                val userPassword= etPwd.text
+                val userPassword = etPwd.text
                 if (userId.isEmpty() || userPassword.isEmpty()) {
                     makeToast("아이디/비번 둘 다 입력해라")
                 } else {
@@ -62,32 +66,38 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-    private fun initNetwork(){
+    private fun initNetwork() {
         val requsetLoginData = RequsetLoginData(
             email = binding.etId.text.toString(),
             password = binding.etPwd.text.toString()
         )
 
-        val call : retrofit2.Call<ResponseLoginData> = ServiceCreater.service.postLogin(requsetLoginData)
+        val call: retrofit2.Call<ResponseLoginData> =
+            ServiceCreater.service.postLogin(requsetLoginData)
 
-        call.enqueue(object : Callback<ResponseLoginData>{
+        call.enqueue(object : Callback<ResponseLoginData> {
             override fun onResponse(
                 call: retrofit2.Call<ResponseLoginData>,
                 response: Response<ResponseLoginData>
             ) {
-                if(response.isSuccessful){
+                if (response.isSuccessful) {
                     moveHomeActivity()
-                    Log.d("서버통신 상태",response.body()?.status.toString())
+                    Log.d("서버통신 상태", response.body()?.status.toString())
 
-                    if(!hasUserAutoData()){
-                        Log.d("저장소에 있는","아이디 비번 없음")
+                    if (!hasUserAutoData()) {
+                        Log.d("저장소에 있는", "아이디 비번 없음")
                         binding.apply {
-                            SophubUserAuthStorage.saveUserId(this@SignInActivity,etId.text.toString())
-                            SophubUserAuthStorage.saveUserPwd(this@SignInActivity,etPwd.text.toString())
+                            SophubUserAuthStorage.saveUserId(
+                                this@SignInActivity,
+                                etId.text.toString()
+                            )
+                            SophubUserAuthStorage.saveUserPwd(
+                                this@SignInActivity,
+                                etPwd.text.toString()
+                            )
                         }
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(
                         this@SignInActivity,
                         response.body()?.status.toString(),
@@ -98,20 +108,20 @@ class SignInActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: retrofit2.Call<ResponseLoginData>, t: Throwable) {
-                Log.d("로그인통신 실패","실패임")
+                Log.d("로그인통신 실패", "실패임")
             }
         })
     }
 
-    private fun searchSopthubUserStoage(){
-        if(hasUserAutoData()){
+    private fun searchSopthubUserStoage() {
+        if (hasUserAutoData()) {
             val requsetLoginData = RequsetLoginData(
                 email = binding.etId.text.toString(),
                 password = binding.etPwd.text.toString()
             )
 
             ServiceCreater.service.postLogin(requsetLoginData)
-            Log.d("자동 로그인","성공")
+            Log.d("자동 로그인", "성공")
             IntentUtil.moveActivity(this, HomeActivity::class.java)
 
         }
@@ -120,4 +130,42 @@ class SignInActivity : AppCompatActivity() {
 
     private fun hasUserAutoData() = SophubUserAuthStorage.getUserId(this).isNotEmpty() &&
             SophubUserAuthStorage.getUserPwd(this).isNotEmpty()
+
+    private fun hasUserId() = binding.etId.text.isEmpty()
+    private fun hasUserPwd() = binding.etPwd.text.isEmpty()
+
+    private fun enableLoginButton() {
+        binding.btnLogin.isEnabled = !hasUserId() && !hasUserPwd()
+        Log.d("로그인 enable 함수", "실행되긴함")
+    }
+
+    private fun checkUserData() {
+        binding.etId.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                enableLoginButton()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.btnLogin.isEnabled = false
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                enableLoginButton()
+            }
+        })
+
+        binding.etPwd.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                enableLoginButton()
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                binding.btnLogin.isEnabled = false
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                enableLoginButton()
+            }
+        })
+    }
 }
