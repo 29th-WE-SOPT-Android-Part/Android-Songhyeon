@@ -1,129 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.view.ProfileFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_intro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/pink"
-        android:layout_marginBottom="434dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+    <data>
 
-        <ImageView
-            android:id="@+id/btn_setting"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="434dp"
+            android:background="@color/pink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:background="@drawable/ic_setting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="147dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="94dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="121dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="@string/ksh"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_photo" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_regular"
+                android:text="@string/git_id"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/introduce"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_follower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/selector_ractangle_orange_gray"
+            android:fontFamily="@font/notosanskr_regular"
+            android:paddingHorizontal="45dp"
+            android:paddingVertical="13dp"
+            android:text="@string/follower"
+            android:textColor="@color/selector_text_btn"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_intro" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_repogitory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_setting"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="7dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/selector_ractangle_orange_gray"
+            android:fontFamily="@font/notosanskr_regular"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="13dp"
+            android:text="@string/repogitory"
+            android:textColor="@color/selector_text_btn"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/btn_follower"
+            app:layout_constraintTop_toTopOf="@+id/btn_follower" />
 
-        <ImageView
-            android:id="@+id/iv_photo"
-            android:layout_width="0dp"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/frg_list"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginBottom="94dp"
-            android:layout_marginHorizontal="147dp"
-            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="121dp"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/notosanskr_bold"
-            android:text="@string/ksh"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_photo" />
-
-        <TextView
-            android:id="@+id/tv_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr_regular"
-            android:text="@string/git_id"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
-
-        <TextView
-            android:id="@+id/tv_introduce"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr_medium"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:text="@string/introduce"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_repogitory" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_follower"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_ractangle_orange_gray"
-        android:paddingHorizontal="45dp"
-        android:paddingVertical="13dp"
-        android:text="@string/follower"
-        android:textColor="@color/selector_text_btn"
-        android:textSize="14sp"
-        android:fontFamily="@font/notosanskr_regular"
-        android:layout_marginTop="11dp"
-        android:layout_marginStart="11dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_intro" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_repogitory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_ractangle_orange_gray"
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="13dp"
-        android:text="@string/repogitory"
-        android:textColor="@color/selector_text_btn"
-        android:textSize="14sp"
-        android:fontFamily="@font/notosanskr_regular"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_follower"
-        app:layout_constraintTop_toTopOf="@+id/btn_follower" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_repogitory" />
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
